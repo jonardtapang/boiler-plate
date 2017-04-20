@@ -1,0 +1,2 @@
+
+alert("plugin 1");
