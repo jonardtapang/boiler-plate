@@ -1,6 +1,5 @@
 .sass-cache
-.idea/*
-.idea/**
+.idea
 **.iml
 build
 node_modules
