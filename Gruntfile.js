@@ -1,3 +1,5 @@
+"use strict";
+
 module.exports = function(grunt) {
 
 	/**
@@ -56,7 +58,7 @@ module.exports = function(grunt) {
 		},
 
 		sass: {
-			dist: {
+			target: {
 				files : [{
 					expand : true,
 					cwd : "<%= fileDir.src.sassPath %>",
@@ -65,9 +67,21 @@ module.exports = function(grunt) {
 					ext : ".css"
 				}]
 			}
+		},
+
+		cssmin: {
+			target: {
+				files : [{
+					expand : true,
+					cwd : "<%= fileDir.dist.cssPath %>",
+					src : "*.css",
+					dest : "<%= fileDir.dist.cssPath%>",
+					ext : ".min.css"
+				}]
+			}
 		}
 
 	}); //End of init config
 
-	grunt.registerTask('default', ['sass', 'concat', 'uglify']);
+	grunt.registerTask('default', [ 'sass', 'concat', 'uglify', 'cssmin']);
 };

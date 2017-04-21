@@ -1,1 +1,0 @@
-alert("vendor1 jquery.js");
